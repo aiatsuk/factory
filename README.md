@@ -19,6 +19,10 @@ Install the repository with your host's normal plugin workflow. The root contain
 
 Invoke `$ai-factory`, or ask naturally to classify a task, select a delivery flow, run factory QA, prepare a release dossier, or review an artifact adversarially.
 
+## Canonical version and updates
+
+Use this repository as the canonical public source. [ai-factory.json](./ai-factory.json) is the machine-readable update contract: it names the current version, release tag, supported entry points, and exact version locations that must change together. `main` is the latest public source; `v<version>` tags are immutable releases.
+
 ## Public-package policy
 
 This public bundle includes all current AI Factory skills. Two project-local references were generalized so the plugin remains self-contained: project-specific architecture conventions are supplied by the active project, and merge rules refer to its protected-branch workflow and CI.

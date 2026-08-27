@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schemaVersion": 1,
+  "package": {
+    "name": "ai-factory",
+    "displayName": "AI Factory",
+    "version": "1.0.1",
+    "repository": "https://github.com/aiatsuk/factory",
+    "defaultBranch": "main",
+    "releaseTag": "v1.0.1"
+  },
+  "entrypoints": {
+    "codexManifest": ".codex-plugin/plugin.json",
+    "claudeManifest": ".claude-plugin/plugin.json",
+    "claudeMarketplace": ".claude-plugin/marketplace.json",
+    "skillsDirectory": "skills/"
+  },
+  "update": {
+    "canonicalSource": "https://github.com/aiatsuk/factory",
+    "remoteMetadataUrl": "https://raw.githubusercontent.com/aiatsuk/factory/main/ai-factory.json",
+    "remoteHeadCommand": "git ls-remote https://github.com/aiatsuk/factory.git HEAD",
+    "versionPolicy": "Semantic versioning. Keep every listed version location identical and tag each published version as v<version>.",
+    "versionLocations": [
+      "ai-factory.json#/package/version",
+      ".codex-plugin/plugin.json#/version",
+      ".claude-plugin/plugin.json#/version",
+      ".claude-plugin/marketplace.json#/plugins/0/version"
+    ],
+    "changeProcedure": [
+      "Read this file and compare its version with the remote metadata before changing the bundle.",
+      "Update the skills, documentation, metadata, and every version location atomically.",
+      "Run the plugin validator and bundle tests, then create a conventional commit and annotated v<version> tag.",
+      "Push the commit and tag, then verify them from a fresh clone."
+    ]
+  }
+}

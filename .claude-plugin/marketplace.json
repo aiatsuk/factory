@@ -9,7 +9,7 @@
     {
       "name": "ai-factory",
       "source": "./",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description": "Classify work and run risk-proportional delivery flows with QA and release gates."
     }
   ]

@@ -1,6 +1,6 @@
 {
   "name": "ai-factory",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Risk-proportional delivery factory for classifying work and running Small, Medium, or Large flows with QA and release gates.",
   "author": {
     "name": "Andrei Iatsuk",

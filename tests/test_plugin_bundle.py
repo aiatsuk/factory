@@ -44,14 +44,44 @@ class AiFactoryPluginBundleTest(unittest.TestCase):
         marketplace = json.loads(
             (PLUGIN_ROOT / ".claude-plugin/marketplace.json").read_text()
         )
+        metadata = json.loads((PLUGIN_ROOT / "ai-factory.json").read_text())
 
         self.assertEqual("ai-factory", codex["name"])
         self.assertEqual(codex["name"], claude["name"])
-        self.assertEqual("1.0.0", codex["version"])
+        self.assertEqual(metadata["package"]["name"], codex["name"])
         self.assertEqual(codex["version"], claude["version"])
         self.assertEqual(codex["version"], marketplace["plugins"][0]["version"])
+        self.assertEqual(metadata["package"]["version"], codex["version"])
+        self.assertEqual(
+            f"v{codex['version']}", metadata["package"]["releaseTag"]
+        )
         self.assertEqual("./skills/", codex["skills"])
         self.assertEqual("./", marketplace["plugins"][0]["source"])
+
+    def test_metadata_declares_the_canonical_update_contract(self) -> None:
+        metadata = json.loads((PLUGIN_ROOT / "ai-factory.json").read_text())
+
+        self.assertEqual(1, metadata["schemaVersion"])
+        self.assertEqual(
+            "https://github.com/aiatsuk/factory",
+            metadata["package"]["repository"],
+        )
+        self.assertEqual("main", metadata["package"]["defaultBranch"])
+        self.assertEqual(
+            ".codex-plugin/plugin.json",
+            metadata["entrypoints"]["codexManifest"],
+        )
+        self.assertEqual(
+            ".claude-plugin/plugin.json",
+            metadata["entrypoints"]["claudeManifest"],
+        )
+        self.assertEqual(
+            ".claude-plugin/marketplace.json",
+            metadata["entrypoints"]["claudeMarketplace"],
+        )
+        self.assertEqual("skills/", metadata["entrypoints"]["skillsDirectory"])
+        self.assertTrue(metadata["update"]["remoteMetadataUrl"].startswith("https://"))
+        self.assertEqual(4, len(metadata["update"]["versionLocations"]))
 
     def test_starter_prompts_invoke_the_entrypoint(self) -> None:
         manifest = json.loads(
