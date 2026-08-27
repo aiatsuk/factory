@@ -1,0 +1,35 @@
+{
+  "name": "ai-factory",
+  "version": "1.0.0",
+  "description": "Risk-proportional delivery factory for classifying work and running Small, Medium, or Large flows with QA and release gates.",
+  "author": {
+    "name": "Andrei Iatsuk",
+    "url": "https://github.com/aiatsuk"
+  },
+  "homepage": "https://github.com/aiatsuk/factory",
+  "repository": "https://github.com/aiatsuk/factory",
+  "keywords": [
+    "ai-factory",
+    "delivery",
+    "task-classification",
+    "qa",
+    "release"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "AI Factory",
+    "shortDescription": "Classify work and run risk-proportional delivery flows.",
+    "longDescription": "AI Factory classifies a raw task, selects a Small, Medium, or Large delivery flow, and supplies artifacts, gates, QA, adversarial review, and human approval rules.",
+    "developerName": "Andrei Iatsuk",
+    "category": "Productivity",
+    "capabilities": [
+      "Task classification",
+      "Delivery planning",
+      "QA and release gates"
+    ],
+    "defaultPrompt": [
+      "Use $ai-factory to classify this task and recommend a delivery flow.",
+      "Use $ai-factory to run the appropriate delivery flow for this feature."
+    ]
+  }
+}

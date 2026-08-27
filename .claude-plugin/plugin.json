@@ -1,0 +1,19 @@
+{
+  "name": "ai-factory",
+  "displayName": "AI Factory",
+  "version": "1.0.0",
+  "description": "Risk-proportional delivery factory for classifying work and running Small, Medium, or Large flows with QA and release gates.",
+  "author": {
+    "name": "Andrei Iatsuk",
+    "url": "https://github.com/aiatsuk"
+  },
+  "homepage": "https://github.com/aiatsuk/factory",
+  "repository": "https://github.com/aiatsuk/factory",
+  "keywords": [
+    "ai-factory",
+    "delivery",
+    "task-classification",
+    "qa",
+    "release"
+  ]
+}

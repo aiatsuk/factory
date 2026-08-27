@@ -1,0 +1,16 @@
+{
+  "name": "ai-factory",
+  "description": "Public marketplace for the self-contained AI Factory plugin.",
+  "owner": {
+    "name": "Andrei Iatsuk",
+    "url": "https://github.com/aiatsuk"
+  },
+  "plugins": [
+    {
+      "name": "ai-factory",
+      "source": "./",
+      "version": "1.0.0",
+      "description": "Classify work and run risk-proportional delivery flows with QA and release gates."
+    }
+  ]
+}
