@@ -4,10 +4,10 @@
   "package": {
     "name": "ai-factory",
     "displayName": "AI Factory",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "repository": "https://github.com/aiatsuk/factory",
     "defaultBranch": "main",
-    "releaseTag": "v1.0.1"
+    "releaseTag": "v1.0.2"
   },
   "entrypoints": {
     "codexManifest": ".codex-plugin/plugin.json",

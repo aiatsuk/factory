@@ -56,7 +56,7 @@ Rules:
 
 ## 4. Tests — Implementation Engineer
 
-- Minimal automated tests for every rule in the mini-spec: ordering, visual state on/off, stable order inside groups, state transition after the triggering action, persistence after refresh/restart if required.
+- Minimal automated tests: at least one per rule in the mini-spec, covering the state after the triggering action and persistence after refresh/restart when the spec requires it.
 - Output: tests + test run result.
 
 ## 5. PR Description — Implementation Engineer
@@ -65,13 +65,13 @@ Rules:
 
 ## 6. Lightweight Review — Staff Engineer
 
-- Check: behavior matches the mini-spec; no mutation of source data; stable sorting correct; states not swapped; no needless rebuilds/perf issues; tests cover the main rules.
+- Check: behavior matches the mini-spec; the diff stays inside the mini tech plan's scope; tests cover the main rules; no regression the diff makes likely (for the viewed-stories example: source data not mutated, stable sort, states not swapped, no needless rebuilds).
 - Output: approve / request changes → `review.md`. Request changes → back to step 3 with concrete findings.
 - For riskier diffs, run `factory-critic` on the diff before the verdict.
 
 ## 7. Smoke QA — QA Executor or human
 
-- Input: build + smoke checklist derived from the mini-spec (open screen → verify initial state → perform action → verify transition → refresh → verify order → restart if persistence required).
+- Input: build + smoke checklist derived from the mini-spec, one check per rule walked in the running app (for the viewed-stories example: open screen → verify initial state → perform action → verify transition → refresh → verify order → restart if persistence required).
 - Output: passed / failed + notes/screenshots → `qa-report.md`. Failed → back to step 3 via a quick triage: requirements, code, or checklist wrong?
 
 ## 8. Human Approval → Merge
@@ -91,18 +91,14 @@ When a Small task is an emergency fix (production-impacting bug, broken build, P
 
 What changes vs. the normal Small flow:
 
-- **Skip the brainstorm and the planning documents.** No `requirements.md`, no `tech-plan.md`. Replace them with a one-paragraph triage note inline in the PR/ticket: symptom (what the user sees / what is broken) and suspected area (which layer or component, from the description alone — before reading code).
+- **Skip the planning documents.** No `requirements.md`, no `tech-plan.md`. Replace them with a one-paragraph triage note inline in the PR/ticket: symptom (what the user sees / what is broken) and suspected area (which layer or component, from the description alone — before reading code).
 - **Keep tests mandatory.** Every fix gets a regression test that reproduces the bug — it must fail without the fix and pass with it. No "obvious one-liner" exception. Do not write tests for unrelated code.
 - **Keep lightweight review mandatory.** Still run the step 6 review (and `factory-critic` on the diff for riskier hotfixes). Emergencies are when scope creep and untested fixes do the most damage, so review is non-negotiable.
 - **Keep smoke QA mandatory** unless persistence/UI is genuinely untouched, in which case record why it was skipped.
 
 ### Root-cause gate (before any code)
 
-Hotfixes invite blind patching. Apply the debugging Iron Law:
-
-> **NO FIXES WITHOUT ROOT CAUSE INVESTIGATION FIRST.**
-
-Run the four-phase method before editing: (1) **investigate** — read the failing code and its immediate neighbors; (2) **hypothesize** a single root cause; (3) **fix** that cause, not the symptom; (4) **verify** with the reproducing test. **3-fix circuit breaker:** if three fix attempts fail, stop patching — the root cause is wrong. Re-investigate from scratch or escalate. If the root cause stays ambiguous after investigation, ask one focused question instead of guessing.
+Hotfixes invite blind patching, so find the root cause before editing: read the failing code and its immediate neighbors, settle on a single root-cause hypothesis, fix that cause rather than the symptom, and prove it with the reproducing test. **3-fix circuit breaker:** if three fix attempts fail, stop patching — the root cause is wrong. Re-investigate from scratch or escalate. If the root cause stays ambiguous after investigation, ask one focused question instead of guessing.
 
 ### Blast-radius escalation gate
 
