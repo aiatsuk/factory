@@ -1,6 +1,8 @@
 ---
 name: factory-critic
 description: "AI Factory adversarial reviewer: attacks any factory stage artifact — classification, requirements, UX spec, technical plan, decomposition, code diff, QA plan, QA report, triage, release dossier — to find flaws, gaps, risks, and simpler alternatives before its gate. Use for 'factory critic', red-team review of a factory artifact, hardening a PR review inside a factory flow, or when a stage artifact must be attacked before passing a gate."
+model: inherit
+effort: high
 ---
 
 # factory-critic - adversarial pass before a gate

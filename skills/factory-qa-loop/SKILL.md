@@ -1,6 +1,8 @@
 ---
 name: factory-qa-loop
 description: "AI Factory QA loop: build a QA execution plan, run emulator QA with evidence, write the QA report, review every finding from product and technical sides, make triage decisions, run fix/requirements/test-plan/environment loops, retest, and record the final QA status. Use for 'factory qa', 'run the QA loop', emulator QA of a factory build, triaging QA findings, retest requests, or when a QA report needs product/technical verdicts instead of blind fixes."
+model: inherit
+effort: high
 ---
 
 # factory-qa-loop - QA execution, report, triage, retest

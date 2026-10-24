@@ -1,6 +1,8 @@
 ---
 name: ai-factory
 description: "AI Factory plugin entrypoint: route any raw idea, task, ticket, bug, or feature request through mandatory Task Classification and then the matching Small / Medium / Large delivery flow with gates, QA loop, triage, and human-approved merge. Use when the user asks for AI Factory, factory delivery, risk-proportional task processing, task classification, or says phrases like 'прогони через фабрику', 'классифицируй задачу', 'factory classify', 'factory flow', or gives a raw idea and asks which process it needs."
+model: inherit
+effort: high
 ---
 
 # ai-factory - risk-proportional delivery factory

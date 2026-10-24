@@ -1,6 +1,8 @@
 ---
 name: factory-medium
 description: "AI Factory Medium Feature Flow: standard path for features classified Medium — product clarification, final requirements, UX behavior spec, technical plan, decomposition into child tasks, implementation with tests, PR review, emulator QA loop with triage, human approval. Use for 'factory medium', features touching several modules, client state, small APIs, backend+client integration, edge cases, or anything needing emulator QA but no heavyweight release process."
+model: inherit
+effort: medium
 ---
 
 # factory-medium - Medium Feature Flow

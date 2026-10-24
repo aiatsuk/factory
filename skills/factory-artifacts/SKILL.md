@@ -1,6 +1,7 @@
 ---
 name: factory-artifacts
 description: "AI Factory reference: canonical artifact templates — task classification, final requirements, technical plan, PR description, QA execution plan, QA report, triage decision, release dossier. Use when any factory stage needs to emit its artifact, when checking an artifact for completeness, or when the user asks for a factory template."
+model: inherit
 ---
 
 # factory-artifacts - canonical templates
