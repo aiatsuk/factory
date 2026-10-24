@@ -1,6 +1,8 @@
 ---
 name: factory-small
 description: "AI Factory Small Task Flow: fast path for local, low-risk tasks classified as Small — quick requirement check, mini tech plan, scoped implementation with tests, PR description, lightweight review, smoke QA, human approval. Use for 'factory small', small classified tasks like sort changes, visual states, lint/warning fixes, empty states, text fixes, analytics events, small bugs, or local widgets."
+model: inherit
+effort: medium
 ---
 
 # factory-small - Small Task Flow

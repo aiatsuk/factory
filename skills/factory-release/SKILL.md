@@ -1,6 +1,8 @@
 ---
 name: factory-release
 description: "AI Factory release stage: assemble the release dossier from requirements, PR, review, and QA artifacts, run the merge gate checklist, obtain human approval, and set up rollout monitoring with follow-up or incident loops. Use for 'factory release', 'prepare the release dossier', merge readiness checks, 'можно ли мержить', post-QA approval requests, or rollout monitoring after a factory merge."
+model: inherit
+effort: high
 ---
 
 # factory-release - dossier, approval, merge, rollout

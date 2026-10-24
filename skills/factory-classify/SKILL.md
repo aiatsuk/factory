@@ -1,6 +1,7 @@
 ---
 name: factory-classify
 description: "AI Factory mandatory first stage: classify a raw idea, task, ticket, or bug by size, risk, and uncertainty using a scorecard and hard triggers, then recommend Small, Medium, or Large flow with blocking questions and routing. Use for 'factory classify', 'классифицируй задачу', 'какой флоу нужен', new raw ideas entering AI Factory, or when an in-flight task hits an escalation or downgrade trigger and needs re-classification."
+model: inherit
 ---
 
 # factory-classify - task classification

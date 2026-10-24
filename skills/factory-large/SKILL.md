@@ -1,6 +1,8 @@
 ---
 name: factory-large
 description: "AI Factory Large Feature Flow: full process for big or high-risk initiatives classified Large — product discovery, requirements gate, UX spec, technical discovery, architecture, decomposition, implementation, PR review, QA test design, emulator QA loop with product+technical triage, release dossier, human approval, merge, rollout monitoring. Use for 'factory large', new domain models, migrations, payments/auth/privacy work, staged rollouts, multi-repo changes, or anything hitting a Large hard trigger."
+model: inherit
+effort: high
 ---
 
 # factory-large - Large Feature Flow

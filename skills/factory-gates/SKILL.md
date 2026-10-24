@@ -1,6 +1,7 @@
 ---
 name: factory-gates
 description: "AI Factory reference: gate rules (requirement, technical, PR review, QA, merge), Definition of Ready and Done per flow size, tracker status sets with transition rules, and the post-QA decision catalogue. Use when checking whether a factory task may pass to the next stage, when wiring factory statuses into Linear/GitHub Issues/Jira/Tracker, or when deciding what counts as Ready or Done for Small, Medium, or Large tasks."
+model: inherit
 ---
 
 # factory-gates - gates, DoR/DoD, statuses
