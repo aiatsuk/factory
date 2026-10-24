@@ -2,6 +2,12 @@
 
 All notable changes to AI Factory. Newest first. Each version is tagged `vX.Y.Z` on `main`.
 
+## 1.0.3 — 2026-10-24
+
+- Skill frontmatter: every stage inherits the model (the factory pins no model) and sets effort where it
+  matters: ai-factory, factory-large, critic, qa-loop and release at high; small and medium at
+  medium; classify, gates and artifacts keep the session's effort.
+
 ## 1.0.2 — 2026-10-01
 
 - Small flow: state the test, review and smoke QA checks generically, keeping the viewed-stories case only as an example.
